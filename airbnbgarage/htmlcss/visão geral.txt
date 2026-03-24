@@ -1,0 +1,13 @@
+Visão geral: pretendi fazer uma página organizada e moderna com uma logo (pesquisei e utilizei inteligência artificial para fazer a logo). Mantive o html e o css juntos, por meio da tag <style>.
+HTML:
+São três cards de garagens com fotos, reutilizados na página de detalhes de garagens.
+<body> -> corpo do site, com todas as tags e divs dentro dessa tag
+<header> -> cabeçalho, com nome, login, anunciar garagem e textos de descrição do site
+<footer> -> direitos autorais
+CSS: cores marrom, verde e bege.
+responsividade: @media
+os cards um do lado do outro, com imagens das garagens.
+
+1 card- Garagem do Centro: R$ 50/hora
+2 card- Garagem Coberta: R$ 30/hora
+3 card- Garagem Residencial: R$ 20/hora

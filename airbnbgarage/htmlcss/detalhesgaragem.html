@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Airbnb Garage - Listagem de Garagens</title>
+
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #e2d6bb;
+            color: #5a3014;
+        }
+
+        /* Cabeçalho */
+        .header {
+            background: #e2d6bb;
+            padding: 15px 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #5a3014;
+        }
+
+        .menu a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #444;
+            font-weight: 500;
+        }
+
+        /* Seção de Garagens */
+        .garages-section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 15px;
+        }
+
+        .garages-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+
+        .garages-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .garage-card {
+            background: #b3a88e;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .garage-card:hover {
+            transform: scale(1.03);
+        }
+
+        .garage-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .garage-info {
+            padding: 15px 20px;
+        }
+
+        .garage-info h3 {
+            color: #5a3014;
+            margin-bottom: 10px;
+        }
+
+        .garage-info p {
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .garage-info .price {
+            font-weight: bold;
+            color: #5a3014;
+            margin-top: 10px;
+        }
+
+        .garage-info ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        .garage-info ul li {
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        .btn-reserve {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #5a3014;
+            color: #e2d6bb;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+
+        .btn-reserve:hover {
+            background: #5a3014;
+        }
+
+        /* Rodapé */
+        .footer {
+            background: #5a3014;
+            color: #e2d6bb;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 40px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 1000px) {
+            .garages-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .garages-container {
+                grid-template-columns: 1fr;
+            }
+
+            .menu {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .menu a {
+                margin: 8px 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="logo">Airbnb <span>Garage</span></div>
+        <nav class="menu">
+            <a href="#">Início</a>
+            <a href="#">Garagens</a>
+            <a href="#">Contato</a>
+        </nav>
+    </header>
+
+    <!-- Seção de Garagens -->
+    <section class="garages-section">
+        <h2>Garagens Disponíveis</h2>
+
+        <div class="garages-container">
+
+            <!-- Garagem 1 -->
+            <div class="garage-card">
+                <img src="https://i.pinimg.com/1200x/e5/f5/70/e5f570294c16724229e3b80ca8f3644d.jpg" alt="Garagem Centro">
+                <div class="garage-info">
+                    <h3>Garagem no Centro</h3>
+                    <p><strong>Localização:</strong> Rua Principal, 123</p>
+                    <p><strong>Segurança:</strong> Monitoramento 24h</p>
+                    <p class="price">R$ 50 / hora</p>
+                    <ul>
+                        <li>Vaga coberta</li>
+                        <li>Próximo ao comércio</li>
+                        <li>Iluminação noturna</li>
+                    </ul>
+                    <a href="#" class="btn-reserve">Reservar</a>
+                </div>
+            </div>
+
+            <!-- Garagem 2 -->
+            <div class="garage-card">
+                <img src="https://i.pinimg.com/736x/4c/b4/3c/4cb43cf4239d33b4f996ed2a02836d44.jpg" alt="Garagem Coberta">
+                <div class="garage-info">
+                    <h3>Vaga Coberta</h3>
+                    <p><strong>Localização:</strong> Rua das Flores, 45</p>
+                    <p><strong>Segurança:</strong> Acesso controlado</p>
+                    <p class="price">R$ 30 / hora</p>
+                    <ul>
+                        <li>Proteção contra chuva e sol</li>
+                        <li>Monitoramento 24h</li>
+                        <li>Fácil acesso</li>
+                    </ul>
+                    <a href="#" class="btn-reserve">Reservar</a>
+                </div>
+            </div>
+
+            <!-- Garagem 3 -->
+            <div class="garage-card">
+                <img src="https://i.pinimg.com/1200x/80/e5/17/80e517e5ef648472a03c03fdf9fcb6fb.jpg" alt="Garagem Residencial">
+                <div class="garage-info">
+                    <h3>Garagem Residencial</h3>
+                    <p><strong>Localização:</strong> Bairro Tranquilo, 78</p>
+                    <p><strong>Segurança:</strong> Vigia 24h</p>
+                    <p class="price">R$ 20 / hora</p>
+                    <ul>
+                        <li>Vaga ao ar livre</li>
+                        <li>Ambiente seguro</li>
+                        <li>Fácil acesso à rua principal</li>
+                    </ul>
+                    <a href="#" class="btn-reserve">Reservar</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <p>© 2025 Airbnb Garage - Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
