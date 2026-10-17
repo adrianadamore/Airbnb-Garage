@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login e Cadastro</title>
+
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #e2d6bb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Container do formulário */
+        .form-container {
+            background: #e2d6bb;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            width: 350px;
+        }
+
+        /* Cabeçalho de abas */
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 25px;
+        }
+
+        .tabs button {
+            background: none;
+            border: none;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            padding-bottom: 5px;
+            transition: 0.3s;
+        }
+
+        .tabs button.active {
+            border-bottom: 2px solid #5a3014;
+            color: #5a3014;
+        }
+
+        /* Formulários */
+        form {
+            display: none;
+            flex-direction: column;
+        }
+
+        form.active {
+            display: flex;
+        }
+
+        form input {
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #e2d6bb;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        form button {
+            padding: 12px;
+            background: #5a3014;
+            color: #e2d6bb;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        form button:hover {
+            background: #5a3014;
+        }
+
+        /* Mensagem de link */
+        .switch-form {
+            text-align: center;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .switch-form a {
+            color: #5a3014;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .switch-form a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 400px) {
+            .form-container {
+                width: 90%;
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <div class="tabs">
+            <button id="login-tab" class="active">Login</button>
+            <button id="register-tab">Cadastro</button>
+        </div>
+
+        <!-- Formulário Login -->
+        <form id="login-form" class="active">
+            <input type="email" placeholder="E-mail" required>
+            <input type="password" placeholder="Senha" required>
+            <button type="submit">Entrar</button>
+            <div class="switch-form">
+                Não tem conta? <a id="show-register">Cadastre-se</a>
+            </div>
+        </form>
+
+        <!-- Formulário Cadastro -->
+        <form id="register-form">
+            <input type="text" placeholder="Nome Completo" required>
+            <input type="email" placeholder="E-mail" required>
+            <input type="password" placeholder="Senha" required>
+            <input type="password" placeholder="Confirmar Senha" required>
+            <button type="submit">Cadastrar</button>
+            <div class="switch-form">
+                Já tem conta? <a id="show-login">Faça login</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Seleciona elementos
+        const loginTab = document.getElementById('login-tab');
+        const registerTab = document.getElementById('register-tab');
+        const loginForm = document.getElementById('login-form');
+        const registerForm = document.getElementById('register-form');
+        const showRegister = document.getElementById('show-register');
+        const showLogin = document.getElementById('show-login');
+
+        // Função para mostrar Login
+        function showLoginForm() {
+            loginForm.classList.add('active');
+            registerForm.classList.remove('active');
+            loginTab.classList.add('active');
+            registerTab.classList.remove('active');
+        }
+
+        // Função para mostrar Cadastro
+        function showRegisterForm() {
+            registerForm.classList.add('active');
+            loginForm.classList.remove('active');
+            registerTab.classList.add('active');
+            loginTab.classList.remove('active');
+        }
+
+        // Eventos de clique
+        loginTab.addEventListener('click', showLoginForm);
+        registerTab.addEventListener('click', showRegisterForm);
+        showRegister.addEventListener('click', showRegisterForm);
+        showLogin.addEventListener('click', showLoginForm);
+    </script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Usuário</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #e2d6bb;
+        }
+
+        /* Container principal */
+        .profile-container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: #b3a88e;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(55, 25, 9, 0.81);
+            padding: 30px;
+        }
+
+        /* Header do perfil */
+        .profile-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-header img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+            border: 3px solid #5a3014;
+        }
+
+        .profile-header .user-info h2 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .profile-header .user-info p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        /* Seções do perfil */
+        .profile-section {
+            margin-bottom: 30px;
+        }
+
+        .profile-section h3 {
+            font-size: 20px;
+            color: #5a3014;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #5a3014;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .profile-section p {
+            font-size: 16px;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        /* Informações adicionais lado a lado */
+        .profile-details {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .detail-card {
+            background: #b3a88e;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px 0;
+            width: 48%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .detail-card h4 {
+            font-size: 16px;
+            color: #5a3014;
+            margin-bottom: 8px;
+        }
+
+        .detail-card p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* Botão de ação */
+        .edit-profile {
+            display: inline-block;
+            padding: 12px 20px;
+            background: #5a3014;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .edit-profile:hover {
+            background: #5a3014;
+        }
+
+        /* Responsivo */
+        @media(max-width: 600px){
+            .profile-header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .profile-header img {
+                margin-bottom: 15px;
+            }
+
+            .detail-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile-container">
+        <!-- Header do perfil -->
+        <div class="profile-header">
+            <img src="https://i.pinimg.com/1200x/09/bc/48/09bc485f2da016a492ba0819c450c191.jpg" alt="Foto do Usuário">
+            <div class="user-info">
+                <h2>Adriana Damore</h2>
+                <p>adrianadamore</p>@email.com</p>
+                <a href="#" class="edit-profile">Editar Perfil</a>
+            </div>
+        </div>
+
+        <!-- Sobre o usuário -->
+        <div class="profile-section">
+            <h3>Sobre</h3>
+            <p>Olá! Meu nome é Adriana e sou apaixonada por carros e garagens. Estou cadastrando minhas garagens para compartilhamento de forma segura e prática. Adoro viajar e conhecer novos lugares.</p>
+        </div>
+
+        <!-- Detalhes adicionais -->
+        <div class="profile-section">
+            <h3>Informações</h3>
+            <div class="profile-details">
+                <div class="detail-card">
+                    <h4>Localização</h4>
+                    <p>São Paulo, SP</p>
+                </div>
+                <div class="detail-card">
+                    <h4>Telefone</h4>
+                    <p>(11) 99999-9999</p>
+                </div>
+                <div class="detail-card">
+                    <h4>Data de Cadastro</h4>
+                    <p>12/03/2024</p>
+                </div>
+                <div class="detail-card">
+                    <h4>Garagens Cadastradas</h4>
+                    <p>3 Garagens</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
